@@ -1,6 +1,8 @@
 package modules;
 
-import java.util.HashMap;
+import java.util.Arrays;
+import java.util.List;
+
 
 class Encrypt {
     private int key;
@@ -13,21 +15,18 @@ class Encrypt {
     }
     public String encryptSentence(){
         // Create a hashmap that stores alphabets letter number equivalent
-        char[] alphabetArr = {'A','B','C','D','E','F'};
-        HashMap<Integer,String> valuehmp = new HashMap<Integer,String>();
-        valuehmp.put(0,"A");
-        valuehmp.put(1,"B");
-        valuehmp.put(2,"C");
-        valuehmp.put(3,"D");
-        valuehmp.put(4,"E");
-        valuehmp.put(5,"F");
-        //String newWord = "QEB";
+        String alphabetArr = "ABCDEF";
+        System.out.println(alphabetArr.indexOf('A'));
+        System.out.println(alphabetArr.charAt(4));
         char[] letters = word.toCharArray();
-        String newWord = "";
         for(char letter: letters){
-            int newShiftedKey = alphabetArr[letter] + key;
-            newWord = String.format(valuehmp.ge);
+            int newShiftedKey = alphabetArr.indexOf(letter) - key;
+            if(newShiftedKey < 0){
+                newShiftedKey = maxNum + newShiftedKey;
+                word = word.replace(letter,alphabetArr.charAt(newShiftedKey));
+            }
+            word = word.replace(letter, alphabetArr.charAt(newShiftedKey));
         }
-        return newWord;
+        return word;
     }
 }
