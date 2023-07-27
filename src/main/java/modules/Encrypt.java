@@ -5,17 +5,29 @@ import java.util.HashMap;
 class Encrypt {
     private int key;
     private String word;
+    private int maxNum = 26;
+    private int minNum = 0;
     public Encrypt(int shiftKey, String wordToDecrypt) {
-        HashMap<String,Integer> hmp = new HashMap<String,Integer>();
-        hmp.put("A",1);
-        hmp.put("B",2);
-        hmp.put("C",3);
-        hmp.put("D",4);
-        hmp.put("E",5);
-        hmp.put("F",6);
+        this.word = wordToDecrypt;
+        this.key = shiftKey;
     }
-    public static String encryptSentence(){
-        String newWord = "QEB";
+    public String encryptSentence(){
+        // Create a hashmap that stores alphabets letter number equivalent
+        char[] alphabetArr = {'A','B','C','D','E','F'};
+        HashMap<Integer,String> valuehmp = new HashMap<Integer,String>();
+        valuehmp.put(0,"A");
+        valuehmp.put(1,"B");
+        valuehmp.put(2,"C");
+        valuehmp.put(3,"D");
+        valuehmp.put(4,"E");
+        valuehmp.put(5,"F");
+        //String newWord = "QEB";
+        char[] letters = word.toCharArray();
+        String newWord = "";
+        for(char letter: letters){
+            int newShiftedKey = alphabetArr[letter] + key;
+            newWord = String.format(valuehmp.ge);
+        }
         return newWord;
     }
 }
