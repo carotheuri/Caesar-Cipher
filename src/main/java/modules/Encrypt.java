@@ -15,18 +15,25 @@ class Encrypt {
     }
     public String encryptSentence(){
         // Create a hashmap that stores alphabets letter number equivalent
-        String alphabetArr = "ABCDEF";
-        System.out.println(alphabetArr.indexOf('A'));
-        System.out.println(alphabetArr.charAt(4));
+        String alphabetArr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        int newShiftedKey;
+        System.out.println(alphabetArr.indexOf('H'));
+        System.out.println(alphabetArr.charAt(7));
         char[] letters = word.toCharArray();
+        String newWord = "";
         for(char letter: letters){
-            int newShiftedKey = alphabetArr.indexOf(letter) - key;
+            newShiftedKey = alphabetArr.indexOf(letter) - key;
             if(newShiftedKey < 0){
                 newShiftedKey = maxNum + newShiftedKey;
                 word = word.replace(letter,alphabetArr.charAt(newShiftedKey));
             }
-            word = word.replace(letter, alphabetArr.charAt(newShiftedKey));
+            else{
+                System.out.println("new position");
+                System.out.println(alphabetArr.charAt(newShiftedKey));
+                newWord = newWord + alphabetArr.charAt(newShiftedKey);
+                word = word.replace(letter, alphabetArr.charAt(newShiftedKey));
+            }
         }
-        return word;
+        return newWord;
     }
 }
