@@ -1,9 +1,5 @@
 package modules;
 
-import java.util.Arrays;
-import java.util.List;
-
-
 class Encrypt {
     private int key;
     private String word;
@@ -13,22 +9,18 @@ class Encrypt {
         this.word = wordToDecrypt.toUpperCase();
         this.key = shiftKey;
     }
-
     public void setKey(int key) {
         this.key = key;
     }
-
     public void setWord(String word) {
         this.word = word;
     }
-
     public int getKey() {
         return key;
     }
     public String getWord() {
         return word;
     }
-
     public String encryptSentence(){
         // Create a hashmap that stores alphabets letter number equivalent
         String alphabetArr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -37,7 +29,6 @@ class Encrypt {
         String newWord = "";
         for(Character letter: letters){
             if(Character.isLetter(letter)){
-//                newShiftedKey = ((alphabetArr.indexOf(letter) - key));
                 newShiftedKey = ((alphabetArr.indexOf(letter) - key + maxNum) % 26);
                 newWord = newWord + alphabetArr.charAt(newShiftedKey);
             }
@@ -45,7 +36,6 @@ class Encrypt {
                 newWord = newWord + letter;
             }
         }
-
         return newWord;
     }
 }
