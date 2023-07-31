@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class EncryptDecryptTest {
     @Test
     public void EncryptTestBehaviour() {
+
         Encrypt word = new Encrypt(3,"the");
         assertEquals("QEB",word.encryptSentence().toUpperCase());
     }
