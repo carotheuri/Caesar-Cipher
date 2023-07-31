@@ -13,6 +13,22 @@ class Encrypt {
         this.word = wordToDecrypt.toUpperCase();
         this.key = shiftKey;
     }
+
+    public void setKey(int key) {
+        this.key = key;
+    }
+
+    public void setWord(String word) {
+        this.word = word;
+    }
+
+    public int getKey() {
+        return key;
+    }
+    public String getWord() {
+        return word;
+    }
+
     public String encryptSentence(){
         // Create a hashmap that stores alphabets letter number equivalent
         String alphabetArr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
