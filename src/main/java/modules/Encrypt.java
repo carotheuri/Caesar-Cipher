@@ -10,7 +10,7 @@ class Encrypt {
     private int maxNum = 26;
     private int minNum = 0;
     public Encrypt(int shiftKey, String wordToDecrypt) {
-        this.word = wordToDecrypt;
+        this.word = wordToDecrypt.toUpperCase();
         this.key = shiftKey;
     }
     public String encryptSentence(){

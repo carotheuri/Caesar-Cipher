@@ -16,10 +16,13 @@ public class Main {
                 System.out.println("Type the word you would like to encrypt");
                 String wordToEncrypt = bufferedReader.readLine();
                 Encrypt word = new Encrypt(3,wordToEncrypt);
-                String sentenceOne = String.format("The encrypted word is: %s", word);
+                String sentenceOne = String.format("The encrypted word is: %s", word.encryptSentence());
                 System.out.println(sentenceOne);
             } else if (navigationChosen.equals("exit")) {
                 programRunning = false;
+            }
+            else{
+                System.out.println("I cannot understand your input");
             }
         }
 
