@@ -17,7 +17,6 @@ class Decrypt {
         String newWord = "";
         for(Character letter: letters){
             if(Character.isLetter(letter)){
-//                newShiftedKey = ((alphabetArr.indexOf(letter) - key));
                 newShiftedKey = ((alphabetArr.indexOf(letter) + key) % 26);
                 if(newShiftedKey > 25){
                     newShiftedKey = newShiftedKey - maxNum;
@@ -28,7 +27,6 @@ class Decrypt {
                 newWord = newWord + letter;
             }
         }
-
         return newWord;
     }
 }
